@@ -1,11 +1,9 @@
-﻿Estacionamiento medido 5 lugares
-traen el vehiuculo registrando la entrada y la salida del 
--cliente (nombre, apellido, telefono, correo) y del 
--auto (patente, marca, modelo y color)
--como minimo marcan 1 hora los clientes 
--2 clientes fijos 
--los lugares pueden estar libres y se van ocupando
--$2500 la hora
--1 cliente puede dejar mas de un vehiculo
--horarios de atencion?
--Porton abre manual?
+﻿- [x] Estacionamiento medido 5 lugares (expandible a 10)
+- [x] traen el vehiuculo registrando la entrada y la salida del ciente
+- [x] cliente (nombre, apellido, telefono, correo) y del 
+- [x] auto (patente, marca, modelo y color)
+- [x] minimo marcan 1 hora de estacionamiento 
+- [x] valor por hora ($2500 la hora actual)
+- [x] cada vehiculo tiene su propio tiempo de estacionamiento
+- [x] se cobra al retirar el vehiculo
+- [x] No hay reserva de estacionamiento
