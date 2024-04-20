@@ -1,0 +1,5 @@
+Estacionamiento medido 5 lugares
+traen el vehiuculo registrando la entrada y la salida del cliente (nombre, apellido, telefono, correo) y del auto (patente, marca, modelo y color)
+como minimo marcan 1 hora los clientes 
+2 clientes fijos 
+los lugares pueden estar libres y se van ocupando
