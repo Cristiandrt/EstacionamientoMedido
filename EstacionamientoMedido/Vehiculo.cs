@@ -8,11 +8,11 @@ namespace EstacionamientoMedido
 {
     internal class Vehiculo
     {
-        public string patente;
-        public string marca;
-        public string modelo;
-        public string color;
-        public Cliente Cliente;
+        public string patente { get; set; }
+        public string marca { get; set; }
+        public string modelo { get; set; }
+        public string color { get; set; }
+        public Cliente Cliente { get; set; }
 
         public Vehiculo(string patente, string marca, string modelo, string color, Cliente cliente)
         {

@@ -8,12 +8,12 @@ namespace EstacionamientoMedido
 {
     internal class Estacionamiento
     {
-        public int precioHora;
-        public DateTime horaEntrada;
-        public DateTime horaSalida;
-        public int totalEstacionamiento;
-        public Vehiculo VehiculoEstacionado;
-        public PlazaEstacionamiento plaza;
+        public int precioHora { get; set; }
+        public DateTime horaEntrada { get; set; }
+        public DateTime horaSalida { get; set; }
+        public int totalEstacionamiento { get; set; }
+        public Vehiculo VehiculoEstacionado { get; set; }
+        public PlazaEstacionamiento plaza { get; set; }
 
         public Estacionamiento(int precioHora, DateTime horaEntrada, DateTime horaSalida, int totalEstacionamiento, Vehiculo vehiculoEstacionado, PlazaEstacionamiento plaza)
         {

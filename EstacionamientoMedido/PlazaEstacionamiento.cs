@@ -8,7 +8,7 @@ namespace EstacionamientoMedido
 {
     internal class PlazaEstacionamiento
     {
-        public string Nombre;
+        public string Nombre { get; set; }
 
         public PlazaEstacionamiento(string nombre)
         {

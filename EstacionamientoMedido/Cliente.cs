@@ -8,11 +8,10 @@ namespace EstacionamientoMedido
 {
     internal class Cliente
     {
-        public string nombre;
-        public string apellido;
-        public string telefono;
-        public string correo;
-        
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string telefono { get; set; }
+        public string correo { get; set; }
 
         public Cliente(string nombre, string apellido, string telefono, string correo)
         {
@@ -20,6 +19,11 @@ namespace EstacionamientoMedido
             this.apellido=apellido;
             this.telefono=telefono;
             this.correo=correo;
+        }
+
+        public Cliente()
+        {
+
         }
     }
 }
