@@ -1,9 +1,6 @@
 ﻿using EstacionamientoMedido;
-//reservorios para guardar todos los objetos creados
-List<Cliente> clientes = new List<Cliente>();
-List<Vehiculo> vehiculos = new List<Vehiculo>();
-List<PlazaEstacionamiento> estacionamientos = new List<PlazaEstacionamiento>();
 
+Repositorio repo = new Repositorio();
 Menu();
 
 void Menu()
@@ -20,7 +17,7 @@ void Menu()
     {
         case 1: //cargar un cliente
 
-            clientes.Add(CargarDatosCliente());
+            repo.clientes.Add(CargarDatosCliente());
             Console.WriteLine();
             Menu();
 
@@ -29,7 +26,7 @@ void Menu()
         case 2: //veo clientes registrados
             Console.WriteLine("Listado de clientes cargados en el sistema");
 
-            MostrarClientesRegistrados(clientes);
+            MostrarClientesRegistrados(repo.clientes);
 
             Menu();
             break;
@@ -63,7 +60,7 @@ void MostrarClientesRegistrados(List<Cliente> listadoClientes)
 {
     Console.WriteLine("Listado de clientes cargados en el sistema");
 
-    foreach (var item in clientes)
+    foreach (var item in repo.clientes)
     {
         Console.WriteLine($">Nombre: {item.nombre} {item.apellido} -Tel: {item.telefono} -Email: {item.correo}");
     }

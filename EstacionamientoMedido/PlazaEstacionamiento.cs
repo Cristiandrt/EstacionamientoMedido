@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstacionamientoMedido
 {
-    internal class PlazaEstacionamiento
+    public class PlazaEstacionamiento
     {
         public string Nombre { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstacionamientoMedido
 {
-    internal class Vehiculo
+    public class Vehiculo
     {
         public string patente { get; set; }
         public string marca { get; set; }

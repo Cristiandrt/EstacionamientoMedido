@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstacionamientoMedido
 {
-    internal class Estacionamiento
+    public class Estacionamiento
     {
         public int precioHora { get; set; }
         public DateTime horaEntrada { get; set; }
