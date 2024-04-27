@@ -8,17 +8,19 @@ namespace EstacionamientoMedido
 {
     internal class Vehiculo
     {
-        private string patente;
-        private string marca;
-        private string modelo;
-        private string color;
+        public string patente;
+        public string marca;
+        public string modelo;
+        public string color;
+        public Cliente Cliente;
 
-        public Vehiculo(string patente, string marca, string modelo, string color)
+        public Vehiculo(string patente, string marca, string modelo, string color, Cliente cliente)
         {
             this.patente=patente;
             this.marca=marca;
             this.modelo=modelo;
             this.color=color;
+            Cliente=cliente;
         }
     }
 }

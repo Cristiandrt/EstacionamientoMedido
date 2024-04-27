@@ -8,15 +8,21 @@ namespace EstacionamientoMedido
 {
     internal class Estacionamiento
     {
-        private int plaza;
-        private DateTime horaEntrada;
-        private DateTime horaSalida;
+        public int precioHora;
+        public DateTime horaEntrada;
+        public DateTime horaSalida;
+        public int totalEstacionamiento;
+        public Vehiculo VehiculoEstacionado;
+        public PlazaEstacionamiento plaza;
 
-        public Estacionamiento(int plaza, DateTime horaEntrada, DateTime horaSalida)
+        public Estacionamiento(int precioHora, DateTime horaEntrada, DateTime horaSalida, int totalEstacionamiento, Vehiculo vehiculoEstacionado, PlazaEstacionamiento plaza)
         {
-            this.plaza=plaza;
+            this.precioHora=precioHora;
             this.horaEntrada=horaEntrada;
             this.horaSalida=horaSalida;
+            this.totalEstacionamiento=totalEstacionamiento;
+            VehiculoEstacionado=vehiculoEstacionado;
+            this.plaza=plaza;
         }
     }
 }

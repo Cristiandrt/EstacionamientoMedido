@@ -8,10 +8,11 @@ namespace EstacionamientoMedido
 {
     internal class Cliente
     {
-        private string nombre;
-        private string apellido;
-        private string telefono;
-        private string correo;
+        public string nombre;
+        public string apellido;
+        public string telefono;
+        public string correo;
+        
 
         public Cliente(string nombre, string apellido, string telefono, string correo)
         {
