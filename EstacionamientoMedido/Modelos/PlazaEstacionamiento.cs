@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstacionamientoMedido
+namespace EstacionamientoMedido.Modelos
 {
     public class PlazaEstacionamiento
     {
@@ -12,7 +12,7 @@ namespace EstacionamientoMedido
 
         public PlazaEstacionamiento(string nombre)
         {
-            Nombre=nombre;
+            Nombre = nombre;
         }
     }
 }

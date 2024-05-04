@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstacionamientoMedido
+namespace EstacionamientoMedido.Modelos
 {
     public class Estacionamiento
     {
@@ -17,12 +17,17 @@ namespace EstacionamientoMedido
 
         public Estacionamiento(int precioHora, DateTime horaEntrada, DateTime horaSalida, int totalEstacionamiento, Vehiculo vehiculoEstacionado, PlazaEstacionamiento plaza)
         {
-            this.precioHora=precioHora;
-            this.horaEntrada=horaEntrada;
-            this.horaSalida=horaSalida;
-            this.totalEstacionamiento=totalEstacionamiento;
-            VehiculoEstacionado=vehiculoEstacionado;
-            this.plaza=plaza;
+            this.precioHora = precioHora;
+            this.horaEntrada = horaEntrada;
+            this.horaSalida = horaSalida;
+            this.totalEstacionamiento = totalEstacionamiento;
+            VehiculoEstacionado = vehiculoEstacionado;
+            this.plaza = plaza;
+        }
+
+        public Estacionamiento()
+        {
+
         }
     }
 }

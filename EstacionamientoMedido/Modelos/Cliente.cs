@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstacionamientoMedido
+namespace EstacionamientoMedido.Modelos
 {
     public class Cliente
     {
@@ -15,10 +15,10 @@ namespace EstacionamientoMedido
 
         public Cliente(string nombre, string apellido, string telefono, string correo)
         {
-            this.nombre=nombre;
-            this.apellido=apellido;
-            this.telefono=telefono;
-            this.correo=correo;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+            this.correo = correo;
         }
 
         public Cliente()

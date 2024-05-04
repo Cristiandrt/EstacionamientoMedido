@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstacionamientoMedido
+namespace EstacionamientoMedido.Modelos
 {
     public class Vehiculo
     {
@@ -16,11 +16,18 @@ namespace EstacionamientoMedido
 
         public Vehiculo(string patente, string marca, string modelo, string color, Cliente cliente)
         {
-            this.patente=patente;
-            this.marca=marca;
-            this.modelo=modelo;
-            this.color=color;
-            Cliente=cliente;
+            this.patente = patente;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+            Cliente = cliente;
         }
+
+        public Vehiculo()
+        {
+
+        }
+
+
     }
 }
