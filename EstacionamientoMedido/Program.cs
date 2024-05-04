@@ -62,13 +62,15 @@ Cliente CargarDatosCliente()
     Cliente clientenuevo = new Cliente(); //instanciamos el cliente para cargar datos
 
     Console.Write("Nombre: ");
-    clientenuevo.nombre = Console.ReadLine();
+    clientenuevo.Nombre = Console.ReadLine();
     Console.Write("Apellido: ");
-    clientenuevo.apellido = Console.ReadLine();
+    clientenuevo.Apellido = Console.ReadLine();
+    Console.Write("DNI: ");
+    clientenuevo.DNI = Console.ReadLine();
     Console.Write("Telefono: ");
-    clientenuevo.telefono = Console.ReadLine();
+    clientenuevo.Telefono = Console.ReadLine();
     Console.Write("Email: ");
-    clientenuevo.correo = Console.ReadLine();
+    clientenuevo.Correo = Console.ReadLine();
 
     return clientenuevo;
 }
@@ -79,7 +81,7 @@ void MostrarClientesRegistrados(List<Cliente> listadoClientes)
 
     foreach (var item in listadoClientes)
     {
-        Console.WriteLine($">Nombre: {item.nombre} {item.apellido} -Tel: {item.telefono} -Email: {item.correo}");
+        Console.WriteLine($">Nombre: {item.Nombre} {item.Apellido} -DNI: {item.DNI} -Tel: {item.Telefono} -Email: {item.Correo}");
     }
 }
 

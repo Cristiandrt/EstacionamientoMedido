@@ -18,31 +18,22 @@ namespace EstacionamientoMedido.Modelos
         {
             clientes.Add(new Cliente()
             {
-                nombre = "Cristian",
-                apellido = "Duarte",
-                telefono = "3482567382",
-                correo = "cristiandrt.17@gmail.com",
-            });
+                Nombre = "Cristian",
+                Apellido = "Duarte",
+                DNI = "35752152",
+                Telefono = "3482567382",
+                Correo = "cristiandrt.17@gmail.com",
+            }) ; 
 
             clientes.Add(new Cliente()
             {
-                nombre = "Betun",
-                apellido = "Duarte",
-                telefono = "3482222222",
-                correo = "betunardo@gmail.com",
-            });
+                Nombre = "Betun",
+                Apellido = "Duarte",
+                DNI = "36013768",
+                Telefono = "3482222222",
+                Correo = "betunardo@gmail.com",
+            }); 
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

@@ -8,17 +8,19 @@ namespace EstacionamientoMedido.Modelos
 {
     public class Cliente
     {
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string DNI { get; set; }
+        public string Telefono { get; set; }
+        public string Correo { get; set; }
 
-        public Cliente(string nombre, string apellido, string telefono, string correo)
+        public Cliente(string nombre, string apellido, string DNI, string telefono, string correo)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.correo = correo;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.DNI = nombre;
+            this.Telefono = telefono;
+            this.Correo = correo;
         }
 
         public Cliente()
