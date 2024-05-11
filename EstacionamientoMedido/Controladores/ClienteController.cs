@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using EstacionamientoMedido.Modelos;
 using EstacionamientoMedido.Helpers;
+using EstacionamientoMedido.Vistas;
 
 namespace EstacionamientoMedido.Controladores
 {
     public class ClienteController
     {
-        Repositorio repo = new Repositorio();
+        Repositorio repo = Repositorio.ObtenerInstancia();
+  
         public void GuardarCliente(Cliente c)
         {
             repo.clientes.Add(c);
@@ -25,9 +27,9 @@ namespace EstacionamientoMedido.Controladores
 
         public Cliente Modificar(Cliente c)
         {
-            Cliente clienteAEliminar = repo.clientes.Find( x => x.DNI == c.DNI ); //funcion Find para buscar cliente
+            Cliente clienteAEliminar = repo.clientes.Find(x => x.DNI == c.DNI); //funcion Find para buscar cliente
 
-            repo.clientes.Remove( clienteAEliminar );
+            repo.clientes.Remove(clienteAEliminar);
 
             repo.clientes.Add(c);
 
@@ -45,9 +47,9 @@ namespace EstacionamientoMedido.Controladores
         //Metodo para obtener un cliente por dni utilizando un gestor de respuesta
         public GestorRespuesta<Cliente> ObtenerClientePorDNI(string dni)
         {
-            Cliente clienteBuscado = repo.clientes.Find(x =>x.DNI == dni);
+            Cliente clienteBuscado = repo.clientes.Find(x => x.DNI == dni);
 
-            if (clienteBuscado == null) 
+            if (clienteBuscado == null)
             {
                 return new GestorRespuesta<Cliente>()
                 {
@@ -64,5 +66,28 @@ namespace EstacionamientoMedido.Controladores
                 };
             }
         }
+
+        public GestorRespuesta<List<Cliente>> ObtenerClientesPorApellido(string filtro)
+        {
+
+            List<Cliente> busqueda = repo.clientes
+                .Where(x => filtro.Contains(filtro))
+                .ToList();
+
+            if (busqueda == null)
+            {
+                return new GestorRespuesta<List<Cliente>>()
+                {
+                    HayError = true,
+                    MensajeError = "No se encuentra el cliente"
+                };
+            }
+            else
+            {
+                return new GestorRespuesta<List<Cliente>>() { respuesta = busqueda };
+            }
+            //TAREA CONPLETAR LOS CONTROLADORES PARA LA PLAZA DE ESTACIONAMIENTO Y LOS VEHICULOS, FILTRAR VEHICULO CON PATENTE SI EXISTE LO BUSCO SI NO EXISTE LO REGISTRO
+        }
+
     }
 }

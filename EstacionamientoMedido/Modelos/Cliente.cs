@@ -22,7 +22,6 @@ namespace EstacionamientoMedido.Modelos
             this.Telefono = telefono;
             this.Correo = correo;
         }
-
         public Cliente()
         {
 
