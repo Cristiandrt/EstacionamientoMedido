@@ -18,7 +18,7 @@ namespace EstacionamientoMedido.Modelos
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.DNI = nombre;
+            this.DNI = DNI;
             this.Telefono = telefono;
             this.Correo = correo;
         }

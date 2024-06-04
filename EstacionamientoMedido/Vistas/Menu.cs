@@ -19,18 +19,32 @@ namespace EstacionamientoMedido.Vistas
 
             int eleccion;
 
-            Console.WriteLine("1 - Cargar un cliente");
-            Console.WriteLine("2 - Ver Clientes Registrados");
-            Console.WriteLine("3 - Cargar un Vehiculo");
-            Console.WriteLine("4 - Cargar un Estacionamiento");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("► 1 - Iniciar estacionamiento");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("► 2 - Terminar estacionamiento");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("_________________________________\r\n");
+            Console.WriteLine("► 3 - Cargar un cliente");
+            Console.WriteLine("► 4 - Ver Clientes Registrados");
+            Console.WriteLine("_________________________________\r\n");
+
+            Console.WriteLine("_________________________________\r\n");
+            Console.WriteLine("► 5 - Cargar un Vehiculo");
+            Console.WriteLine("► 6 - Ver Vehiculos Cargados");
+            Console.WriteLine("► 7 - Ver Estacionamientos");
+            Console.WriteLine("_________________________________");
+            Console.WriteLine("");
+
+            Console.WriteLine("► 8 - Salir");
             Console.WriteLine();
             Console.Write("Opcion: ");
             eleccion = int.Parse(Console.ReadLine());
 
             switch (eleccion)
             {
-                case 1: //cargar un cliente
-
+                case 3: //cargar un cliente
 
                     vistacliente.CargarDatosCliente();
 
@@ -39,26 +53,32 @@ namespace EstacionamientoMedido.Vistas
 
                     break;
 
-                case 2:
+                case 4:
 
                     vistacliente.MostrarClientesRegistrados();
 
                     MostrarMenu();
                     break;
 
-                case 3:
+                case 5:
 
                     vistavehiculo.CargarDatosVehiculo();
 
                     MostrarMenu();
                     break;
 
-                //    Console.WriteLine();
-                //    break;
-                case 4:
+                case 6:
 
+                    vistavehiculo.MostrarVehiculosRegistrados();
 
+                    MostrarMenu();
                     break;
+
+                case 8:
+
+                    Environment.Exit(0);
+                    break;
+
                 default:
                     Console.Clear();
                     MostrarMenu();

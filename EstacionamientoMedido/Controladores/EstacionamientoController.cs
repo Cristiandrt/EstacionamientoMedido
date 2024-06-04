@@ -30,11 +30,11 @@ namespace EstacionamientoMedido.Controladores
         }
 
         public void FinalizarEstacionamiento(string patente)
-        {
+        {//linQ
             Estacionamiento salida = repo.Estacionamiento
-                .Where(x => x.VehiculoEstacionado.patente == patente)
+               // .Where(x => x.VehiculoEstacionado.patente == patente)
                 .OrderBy(x => x.horaEntrada)
-                .SingleOrDefault();//con todo esto toma el primero que existe
+                .Single();//con todo esto toma el primero que existe
 
             repo.Estacionamiento.Remove(salida);
 

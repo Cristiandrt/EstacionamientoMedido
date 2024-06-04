@@ -6,29 +6,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-   
+
 namespace EstacionamientoMedido.Vistas
 {
-
     public class VehiculoVista
     {
-         public Vehiculo CargarDatosVehiculo()
+        VehiculoController controladorVehiculos = new VehiculoController();
+        public void CargarDatosVehiculo()
         {
             Vehiculo vehiculonuevo = new Vehiculo();
 
             Console.Write("Patente: ");
-            vehiculonuevo.patente = Console.ReadLine();
+            vehiculonuevo.Patente = Console.ReadLine();
             Console.Write("Marca: ");
-            vehiculonuevo.marca = Console.ReadLine();
+            vehiculonuevo.Marca = Console.ReadLine();
             Console.Write("Modelo: ");
-            vehiculonuevo.modelo = Console.ReadLine();
+            vehiculonuevo.Modelo = Console.ReadLine();
             Console.Write("Color: ");
-            vehiculonuevo.color = Console.ReadLine();
-            //como cargo el cliente?
+            vehiculonuevo.Color = Console.ReadLine();
 
-            return vehiculonuevo;
+            controladorVehiculos.GuardarVehiculo(vehiculonuevo);
         }
 
+        public void MostrarVehiculosRegistrados()
+        {
+            List<Vehiculo> vehiculos = controladorVehiculos.ObtenerVehiculos();
 
+            Console.WriteLine("lista de Vehiculos Registrados en el sistema");
+
+            foreach (var item in vehiculos)
+            {
+                Console.WriteLine($" Patente: {item.Patente} - Marca: {item.Marca} - Modelo {item.Modelo} - Color: {item.Color}");
+            }
+        }
     }
 }

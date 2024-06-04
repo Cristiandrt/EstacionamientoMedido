@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace EstacionamientoMedido.Modelos
 
         private void PrecargarDatos()
         {
+            //CLIENTES
             clientes.Add(new Cliente()
             {
                 Nombre = "Cristian",
@@ -47,6 +49,23 @@ namespace EstacionamientoMedido.Modelos
                 Telefono = "3482222222",
                 Correo = "betunardo@gmail.com",
             });
+
+            //VEHÍCULOS
+            vehiculos.Add(new Vehiculo() { 
+                Patente = "FGH 961",
+                Marca = "VolksWagen",
+                Modelo = "2016",
+                Color = "Rojo",
+                });
+
+            vehiculos.Add(new Vehiculo()
+            {
+                Patente = "GHK 666",
+                Marca = "VolksWagen",
+                Modelo = "2017",
+                Color = "Azul",
+            });
+
         }
 
         public static Repositorio ObtenerInstancia()

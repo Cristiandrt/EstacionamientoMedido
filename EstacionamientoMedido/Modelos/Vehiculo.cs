@@ -8,18 +8,18 @@ namespace EstacionamientoMedido.Modelos
 {
     public class Vehiculo
     {
-        public string patente { get; set; }
-        public string marca { get; set; }
-        public string modelo { get; set; }
-        public string color { get; set; }
+        public string Patente { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public string Color { get; set; }
         public Cliente Cliente { get; set; }
 
         public Vehiculo(string patente, string marca, string modelo, string color, Cliente cliente)
         {
-            this.patente = patente;
-            this.marca = marca;
-            this.modelo = modelo;
-            this.color = color;
+            this.Patente = patente;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Color = color;
             Cliente = cliente;
         }
 

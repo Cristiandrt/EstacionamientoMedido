@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using EstacionamientoMedido.Modelos;
 using EstacionamientoMedido.Helpers;
 using EstacionamientoMedido.Vistas;
+using EstacionamientoMedido.Validaciones;
+using FluentValidation.Results;
 
 namespace EstacionamientoMedido.Controladores
 {
@@ -15,8 +17,20 @@ namespace EstacionamientoMedido.Controladores
   
         public void GuardarCliente(Cliente c)
         {
-            repo.clientes.Add(c);
+            ClienteValidator valida = new ClienteValidator();
+            ValidationResult resultadoValidacion = valida.Validate(c);
 
+            if (resultadoValidacion.IsValid)
+            {
+            repo.clientes.Add(c);
+            }
+            else
+            {
+                foreach (var item in resultadoValidacion.Errors)
+                {
+                    Console.WriteLine(item.ErrorMessage);
+                }
+            }
             //tarea crear controladores que faltan para cliente para estacionamiento y apra repositorio
         }
 

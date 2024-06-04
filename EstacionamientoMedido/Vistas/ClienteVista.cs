@@ -13,15 +13,17 @@ namespace EstacionamientoMedido.Vistas
     {
         ClienteController controladorClientes = new ClienteController();
         public void CargarDatosCliente()
-        {        
+        {
             Cliente clientenuevo = new Cliente(); //instanciamos el cliente para cargar datos
 
             Console.Write("Nombre: ");
             clientenuevo.Nombre = Console.ReadLine();
             Console.Write("Apellido: ");
             clientenuevo.Apellido = Console.ReadLine();
+            Console.Write("Ingrese DNI sin puntos ni espacios");
             Console.Write("DNI: ");
             clientenuevo.DNI = Console.ReadLine();
+            Console.Write("Ingrese Telefono (solo digitos)");
             Console.Write("Telefono: ");
             clientenuevo.Telefono = Console.ReadLine();
             Console.Write("Email: ");
