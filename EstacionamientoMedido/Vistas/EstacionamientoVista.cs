@@ -22,7 +22,15 @@ namespace EstacionamientoMedido.Vistas
             {
                 vistavehiculo.CargarDatosVehiculo();
             }
-
+            
+            if (!estacionamiento.YaEstaEstacionado(patente))
+            {
+                estacionamiento.IniciarEstacionamiento(patente);
+            }
+            else
+            {
+                Console.WriteLine("vehiculo creado");
+            }
 
         }
         public void FinalizarEstacionamiento()
@@ -34,6 +42,5 @@ namespace EstacionamientoMedido.Vistas
 
             estacionamiento.FinalizarEstacionamiento(patente);
         }
-
     }
 }

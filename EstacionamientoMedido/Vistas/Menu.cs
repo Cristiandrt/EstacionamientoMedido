@@ -44,6 +44,14 @@ namespace EstacionamientoMedido.Vistas
 
             switch (eleccion)
             {
+                case 1: //iniciar estacionamiento
+
+                    vistaestacionamiento.IniciarEstacionamiento();
+                    Console.WriteLine();
+                    MostrarMenu();
+
+                    break;
+
                 case 3: //cargar un cliente
 
                     vistacliente.CargarDatosCliente();

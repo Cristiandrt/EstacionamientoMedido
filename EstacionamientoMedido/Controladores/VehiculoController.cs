@@ -33,7 +33,6 @@ namespace EstacionamientoMedido.Controladores
                 }
             }
 
-
         }
 
         public bool ExistePatente(string patente)

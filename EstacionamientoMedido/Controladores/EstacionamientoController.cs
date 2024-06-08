@@ -13,7 +13,7 @@ namespace EstacionamientoMedido.Controladores
         VehiculoController controladorVehiculo = new VehiculoController();
         public void GuardarEstacionamiento(Estacionamiento e)
         {
-            repo.Estacionamiento.Add(e);
+            repo.Estacionamientos.Add(e);
         }
 
         public void IniciarEstacionamiento(string patente)
@@ -26,24 +26,40 @@ namespace EstacionamientoMedido.Controladores
             estacionamiento.VehiculoEstacionado = vehiculo;
             estacionamiento.precioHora = 2000;
 
-            repo.Estacionamiento.Add(estacionamiento);
+            repo.Estacionamientos.Add(estacionamiento);
         }
 
         public void FinalizarEstacionamiento(string patente)
         {//linQ
-            Estacionamiento salida = repo.Estacionamiento
+            Estacionamiento salida = repo.Estacionamientos
                // .Where(x => x.VehiculoEstacionado.patente == patente)
                 .OrderBy(x => x.horaEntrada)
                 .Single();//con todo esto toma el primero que existe
 
-            repo.Estacionamiento.Remove(salida);
+            repo.Estacionamientos.Remove(salida);
 
             salida.horaSalida = DateTime.Now;
             //tarea calculo del precio total
             salida.totalEstacionamiento = 0; //calcular valor total del estacionamiento
             //modifiar el estacionamiento actual
 
-            repo.Estacionamiento.Add(salida);
+            repo.Estacionamientos.Add(salida);
+        }
+
+        public bool YaEstaEstacionado(string petente)
+        {
+            bool resultado;
+
+            resultado = repo.Estacionamientos
+                .Where(x => x.VehiculoEstacionado.Patente == petente)
+                .Any();
+
+            return resultado;
+        }
+
+        public List<Estacionamiento> ObtenerTodos()
+        {
+            return repo.Estacionamientos;
         }
 
     }

@@ -20,7 +20,7 @@ namespace EstacionamientoMedido.Modelos
         public List<Cliente> clientes = new List<Cliente>();
         public List<Vehiculo> vehiculos = new List<Vehiculo>();
         public List<PlazaEstacionamiento> PlazaEstacionamiento = new List<PlazaEstacionamiento>();
-        public List<Estacionamiento> Estacionamiento = new List<Estacionamiento>();
+        public List<Estacionamiento> Estacionamientos = new List<Estacionamiento>();
 
         private static Repositorio instancia;
 
@@ -52,7 +52,7 @@ namespace EstacionamientoMedido.Modelos
 
             //VEHÍCULOS
             vehiculos.Add(new Vehiculo() { 
-                Patente = "FGH 961",
+                Patente = "AAA 111",
                 Marca = "VolksWagen",
                 Modelo = "2016",
                 Color = "Rojo",
