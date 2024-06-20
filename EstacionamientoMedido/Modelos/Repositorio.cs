@@ -14,8 +14,7 @@ namespace EstacionamientoMedido.Modelos
         2.1 -> Si no existe la crea, si existe devuelve la misma
         3-> El metodo y la instancia tiene que ser esattico*/
     public class Repositorio
-    {
-  
+    {  
         //reservorios para guardar todos los objetos creados
         public List<Cliente> clientes = new List<Cliente>();
         public List<Vehiculo> vehiculos = new List<Vehiculo>();
@@ -66,6 +65,11 @@ namespace EstacionamientoMedido.Modelos
                 Color = "Azul",
             });
 
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento('A'));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento('B'));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento('C'));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento('D'));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento('E'));
         }
 
         public static Repositorio ObtenerInstancia()

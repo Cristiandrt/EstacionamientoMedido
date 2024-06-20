@@ -62,5 +62,9 @@ namespace EstacionamientoMedido.Controladores
             return repo.Estacionamientos;
         }
 
+        public Estacionamiento ObtenerEstacionamientoPorPatente(string patente)
+        {
+            return repo.Estacionamientos.FirstOrDefault(e => e.VehiculoEstacionado.Patente == patente);
+        }
     }
 }

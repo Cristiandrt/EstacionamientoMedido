@@ -45,7 +45,8 @@ namespace EstacionamientoMedido.Vistas
             switch (eleccion)
             {
                 case 1: //iniciar estacionamiento
-
+                    /* -corregir tomar la patente de entrada como establecida para cargar vehiculo
+                       -corregir segmentacion de la vista cuando muestro los datos */
                     vistaestacionamiento.IniciarEstacionamiento();
                     Console.WriteLine();
                     MostrarMenu();

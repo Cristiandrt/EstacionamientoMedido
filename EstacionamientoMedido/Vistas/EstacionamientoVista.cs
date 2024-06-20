@@ -12,24 +12,29 @@ namespace EstacionamientoMedido.Vistas
     {
         VehiculoController controladorVehiculo = new VehiculoController();
         VehiculoVista vistavehiculo = new VehiculoVista();
-        EstacionamientoController estacionamiento = new EstacionamientoController();
+        EstacionamientoController controladorEstacionamiento = new EstacionamientoController();
         public void IniciarEstacionamiento()
         {
             Console.WriteLine("Ingrese patente para estacionar: ");
             string patente = Console.ReadLine();
-            //pregunto si el vehiculo por patente existe
+            
             if (!controladorVehiculo.ExistePatente(patente))
             {
+                Console.WriteLine("Debe Registrar Vehiculo para Estacionar");
                 vistavehiculo.CargarDatosVehiculo();
             }
-            
-            if (!estacionamiento.YaEstaEstacionado(patente))
+
+            if (!controladorEstacionamiento.YaEstaEstacionado(patente))
             {
-                estacionamiento.IniciarEstacionamiento(patente);
+                controladorEstacionamiento.IniciarEstacionamiento(patente);
+
+                Console.WriteLine("Estacionamiento Iniciado Correctamente");
+                MostrarDatosEstacionamiento(patente);
             }
             else
             {
-                Console.WriteLine("vehiculo creado");
+                Console.WriteLine("El vehículo ya está estacionado.");
+                MostrarDatosEstacionamiento(patente);
             }
 
         }
@@ -40,7 +45,28 @@ namespace EstacionamientoMedido.Vistas
             Console.WriteLine("Ingrese patente de salida: ");
             string patente = Console.ReadLine();
 
-            estacionamiento.FinalizarEstacionamiento(patente);
+            controladorEstacionamiento.FinalizarEstacionamiento(patente);
         }
+
+        public void MostrarDatosEstacionamiento(string patente)
+        {
+            Estacionamiento estacionamiento = controladorEstacionamiento.ObtenerEstacionamientoPorPatente(patente);
+
+            if (estacionamiento != null) 
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("_________________________________\r\n");
+                Console.WriteLine($"Vehiculo {estacionamiento.VehiculoEstacionado.Patente} Estacionado:");
+                Console.WriteLine($"Hora de Entrada: {estacionamiento.horaEntrada}");
+                Console.WriteLine($"Precio por Hora: {estacionamiento.precioHora}");
+                Console.WriteLine("_________________________________\r\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            else
+            {
+                Console.WriteLine("No se encontró registro de estacionamiento para el vehículo.");
+            }
+        }
+        
     }
 }
