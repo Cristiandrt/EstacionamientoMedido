@@ -8,10 +8,10 @@ namespace EstacionamientoMedido.Modelos
 {
     public class PlazaEstacionamiento
     {
-        public char Letra { get; set; }
+        public string Letra { get; set; }
         public bool EstaOcupada { get; set; }
 
-        public PlazaEstacionamiento(char letra)
+        public PlazaEstacionamiento(string letra)
         {
             Letra = letra;
             EstaOcupada = false;

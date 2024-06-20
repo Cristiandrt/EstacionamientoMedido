@@ -65,11 +65,11 @@ namespace EstacionamientoMedido.Modelos
                 Color = "Azul",
             });
 
-            PlazaEstacionamiento.Add(new PlazaEstacionamiento('A'));
-            PlazaEstacionamiento.Add(new PlazaEstacionamiento('B'));
-            PlazaEstacionamiento.Add(new PlazaEstacionamiento('C'));
-            PlazaEstacionamiento.Add(new PlazaEstacionamiento('D'));
-            PlazaEstacionamiento.Add(new PlazaEstacionamiento('E'));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento("A"));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento("B"));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento("C"));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento("D"));
+            PlazaEstacionamiento.Add(new PlazaEstacionamiento("E"));
         }
 
         public static Repositorio ObtenerInstancia()

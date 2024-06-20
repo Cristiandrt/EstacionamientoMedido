@@ -13,6 +13,7 @@ namespace EstacionamientoMedido.Vistas
         VehiculoController controladorVehiculo = new VehiculoController();
         VehiculoVista vistavehiculo = new VehiculoVista();
         EstacionamientoController controladorEstacionamiento = new EstacionamientoController();
+        PlazaController controladorPlazas = new PlazaController();
         public void IniciarEstacionamiento()
         {
             Console.WriteLine("Ingrese patente para estacionar: ");
@@ -26,9 +27,44 @@ namespace EstacionamientoMedido.Vistas
 
             if (!controladorEstacionamiento.YaEstaEstacionado(patente))
             {
-                controladorEstacionamiento.IniciarEstacionamiento(patente);
+                var plazasDisponibles = controladorPlazas.ObtenerPlazasDisponibles();
+                if(plazasDisponibles.Count == 0)
+                {
+                    Console.WriteLine("No hay plazas Disponibles.");
+                    return;
+                }
 
-                Console.WriteLine("Estacionamiento Iniciado Correctamente");
+                Console.WriteLine("Plazas Disponibles: ");
+                foreach(var plaza in plazasDisponibles)
+                {
+                    Console.WriteLine(plaza.Letra);
+                }
+
+                Console.Write("Seleccione una plaza para estacionar: ");
+                string letraPlaza = Console.ReadLine().ToUpper();
+
+                if (plazasDisponibles.Any(x => x.Letra == letraPlaza))
+                {
+                    controladorEstacionamiento.IniciarEstacionamiento(patente, letraPlaza);
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+                    Console.WriteLine("Estacionamiento Iniciado Correctamente");
+                    var estacionamientoActual = controladorEstacionamiento.ObtenerEstacionamientoPorPatente(patente);
+                    if (estacionamientoActual != null)
+                    {
+                        Console.WriteLine($"Hora de Entrada: {estacionamientoActual.horaEntrada}");
+                        Console.WriteLine($"Plaza Asignada: {estacionamientoActual.plaza.Letra}");
+                        Console.WriteLine($"Vehículo: {estacionamientoActual.VehiculoEstacionado.Marca} {estacionamientoActual.VehiculoEstacionado.Modelo}");
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                else
+                {
+                    Console.WriteLine("Plaza seleccionada no válida.");
+                }
+
+
                 MostrarDatosEstacionamiento(patente);
             }
             else

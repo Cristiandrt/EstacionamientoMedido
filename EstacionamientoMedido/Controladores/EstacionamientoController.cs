@@ -11,21 +11,30 @@ namespace EstacionamientoMedido.Controladores
     {
         Repositorio repo = Repositorio.ObtenerInstancia();
         VehiculoController controladorVehiculo = new VehiculoController();
+        PlazaController controladorPlaza = new PlazaController();
         public void GuardarEstacionamiento(Estacionamiento e)
         {
             repo.Estacionamientos.Add(e);
         }
 
-        public void IniciarEstacionamiento(string patente)
+        public void IniciarEstacionamiento(string patente, string letraPlaza)
         {
             Vehiculo vehiculo = controladorVehiculo.ObtenerVehiculoPorPatente(patente);
+            PlazaEstacionamiento plaza = controladorPlaza.ObtenerPlazasDisponibles().FirstOrDefault(x => x.Letra == letraPlaza);
+
+            if (plaza == null)
+            {
+                throw new Exception("La plaza seleccionada no está disponible.");
+            }
 
             Estacionamiento estacionamiento = new Estacionamiento();
 
             estacionamiento.horaEntrada=DateTime.Now;
             estacionamiento.VehiculoEstacionado = vehiculo;
             estacionamiento.precioHora = 2000;
+            estacionamiento.plaza = plaza;
 
+            controladorPlaza.OcuparPlaza(letraPlaza);
             repo.Estacionamientos.Add(estacionamiento);
         }
 
